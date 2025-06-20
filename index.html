@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeni - Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="nav-bar">
+      <div class="menu container">
+        <div class="logo-container">
+          <img src="img/logo-greeni.png" class="logo-img" alt="Logo Greeni">
+          <a href="#home" class="logo-text">Greeni</a>
+        </div>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon-label">
+          <img src="img/menu-icon.png" class="menu-icono" alt="Menú">
+        </label>
+        <nav class="nav-menu">
+          <ul class="nav-links">
+            <li><a href="#encuentran">Inicio</a></li>
+            <li><a href="#about">Quiénes Somos</a></li>
+            <li><a href="#diagnostico">Diagnóstico</a></li>
+            <li><a href="#guias">Guías de cultivo</a></li>
+            <li><a href="#comunidad">Comunidad</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="register-login">
+          <a href="#" class="btn-app">Ingresa a la App</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <p class="hero-subtitle">Cultiva vida en tu hogar</p>
+        <h1>Diagnóstico inteligente, guías prácticas y comunidad de amantes de las plantas</h1>
+        <a href="#" class="btn-app">Ingresa a la App</a>
+      </div>
+    </section>
+  </header>
+
+  <section id="encuentran" class="section-light">
+    <div class="container encuentro-content">
+      <div class="text-block">
+        <h2>Donde los amantes de las plantas se <span class="highlight">encuentran</span></h2>
+        <p>Únete a nuestra comunidad de jardineros apasionados: comparte fotos, consejos y descubre nuevas ideas para cuidar tus plantas.</p>
+        <ul class="feature-list">
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <div class="feature-text">
+              <span class="feature-title">Comparte y aprende</span>
+              <p>Publica tus mejores prácticas y recibe feedback de aficionados y expertos de todo el mundo.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <div class="feature-text">
+              <span class="feature-title">Descubre y guarda</span>
+              <p>Explora guías detalladas de más de 200 especies y marca tus favoritas para consultarlas siempre.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fas fa-check-circle"></i>
+            <div class="feature-text">
+              <span class="feature-title">Participa y gana</span>
+              <p>Únete a retos semanales, acumula insignias y escala posiciones en nuestra tabla de clasificación.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="image-block">
+        <img src="img/encuentran.webp" alt="Regando plantas">
+      </div>
+    </div>
+  </section>
+  <section id="about" class="section-light">
+    <div class="container about-content">
+      <div class="section-title-container">
+        <h2>Quiénes Somos</h2>
+      </div>
+      <div class="card mission">
+        <div class="image-block">
+          <img src="img/mision.jpg" alt="Mujer cuidando plantas con dedicación">
+        </div>
+        <div class="card-content">
+          <h3>Misión</h3>
+          <p>Empoderar a todo amante de las plantas (desde el principiante hasta el experto) para cuidar su jardín de manera sencilla y efectiva, combinando diagnóstico personalizado, guías prácticas y una comunidad colaborativa que comparte consejos y experiencias.</p>
+        </div>
+      </div>
+      <div class="card vision reversed">
+        <div class="card-content">
+          <h3>Visión</h3>
+          <p>Convertirnos en la plataforma de referencia mundial para el cuidado de plantas, inspirando a millones de personas a reconectar con la naturaleza y fomentar un mundo más verde, saludable y sostenible.</p>
+        </div>
+        <div class="image-block">
+          <img src="img/vision.jpg" alt="Vista aérea de una persona podando arbustos perfectamente redondos">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="diagnostico" class="section-dark">
+    <div class="container">
+      <div class="section-title-container">
+        <h2>Diagnóstico</h2>
+      </div>
+      <div class="diagnostico-main-content">
+        <div class="diagnostic-control">
+          <div class="control-wrapper">
+            <div class="toggle-buttons">
+              <button id="modoManualBtn" class="toggle-btn active">Manual</button>
+              <button id="modoFotoBtn" class="toggle-btn">Foto</button>
+            </div>
+            <form id="formDiagnostico">
+              <div id="inputsManual">
+                <div class="form-group">
+                  <label for="temp">Temperatura ambiente <span id="temp-value">25°C</span></label>
+                  <input type="range" id="temp" min="0" max="50" value="25">
+                </div>
+                <div class="form-group">
+                  <label for="humedad">Humedad del sustrato <span id="humedad-value">50%</span></label>
+                  <input type="range" id="humedad" min="0" max="100" value="50">
+                </div>
+                <div class="form-group">
+                  <label for="ph">PH del suelo <span id="ph-value">7.0</span></label>
+                  <input type="range" id="ph" min="1" max="14" value="7" step="0.1">
+                </div>
+                <div class="form-group">
+                  <label for="tipoPlanta">Tipo de planta</label>
+                  <input type="text" id="tipoPlanta" placeholder="Ej: Rosa, Tomate, Cactus...">
+                </div>
+              </div>
+              <div id="inputsFoto" class="hidden">
+                <div class="upload-area">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <p>Arrastra una foto o <span>explora tus archivos</span></p>
+                  <input type="file" id="fotoPlanta" accept="image/*" class="hidden">
+                </div>
+                <div id="image-preview" class="hidden"></div>
+              </div>
+              <button type="button" id="analizarBtn" class="btn-analizar">Analizar</button>
+                  <p id="mensajeAnalisis" class="result-message" style="color: #FEF9E0; text-align: center; margin-top: 1rem;"></p>
+            </form>
+          </div>
+        </div>
+        <div class="diagnostic-image">
+          <img src="img/plantas.jpeg" alt="Varias plantas suculentas y cactus">
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="guias" class="section-light">
+    <div class="container">
+      <div id="guides-intro">
+        <div class="guides-card">
+          <div class="guides-image">
+            <img src="img/guias-cultivo.jpg" alt="Persona con guantes sosteniendo una planta con flores amarillas">
+          </div>
+          <div class="guides-content">
+            <h2>Guías de <span class="highlight">Cultivo</span></h2>
+            <div class="guide-topic">
+              <h3>Suculentas y cactus</h3>
+              <p>Aprende cuándo regar, cómo trasplantar y qué tipo de sustrato usar para mantener tus suculentas firmes y saludables.</p>
+            </div>
+            <div class="guide-topic">
+              <h3>Plantas de interior</h3>
+              <p>Domina la iluminación, la frecuencia de riego y los cuidados contra plagas para embellecer tu hogar con plantas de interior.</p>
+            </div>
+            <button id="explorarGuiasBtn" class="btn-primary btn-explore-guides">Explorar Guías</button>
+          </div>
+        </div>
+      </div>
+      <div id="guides-gallery" class="hidden">
+        <div class="section-title-container">
+          <h2 class="title-dark">Nuestras Guías</h2>
+        </div>
+        <div class="guides-grid-container">
+          <div class="guide-item-card">
+            <img src="img/guia-suculenta.jpeg" alt="Suculenta Echeveria">
+            <div class="guide-item-content">
+              <h3>Cuidado de Suculentas</h3>
+              <p>Riego espaciado, mucha luz solar indirecta y un sustrato que drene bien son las claves para su éxito.</p>
+            </div>
+          </div>
+          <div class="guide-item-card">
+            <img src="img/guia-monstera.webp" alt="Planta Monstera Deliciosa">
+            <div class="guide-item-content">
+              <h3>Monstera Deliciosa</h3>
+              <p>Prefiere la humedad ambiental alta, luz brillante indirecta y limpieza de hojas para una fotosíntesis óptima.</p>
+            </div>
+          </div>
+          <div class="guide-item-card">
+            <img src="img/guia-orquidea.jpg" alt="Orquídea Phalaenopsis">
+            <div class="guide-item-content">
+              <h3>Secretos de Orquídeas</h3>
+              <p>El riego por inmersión una vez por semana y un buen flujo de aire son fundamentales para evitar la pudrición de raíces.</p>
+            </div>
+          </div>
+          <div class="guide-item-card">
+            <img src="img/guia-bonsai.jpeg" alt="Bonsai Ficus">
+            <div class="guide-item-content">
+              <h3>El Arte del Bonsái</h3>
+              <p>Requiere podas de formación regulares, alambrado cuidadoso y un control estricto de la humedad del sustrato.</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button id="back-to-intro-btn" class="btn-back">← Volver</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="comunidad" class="section-dark">
+    <div class="container">
+      <div class="section-title-container">
+        <h2>Comunidad</h2>
+      </div>
+      <p class="section-subtitle-cream text-center">No confíes solo en nuestras palabras</p>
+      <div class="carousel-container">
+        <div class="carousel" id="carouselResenas">
+          <div class="review-card">
+            <div class="review-header">
+              <h3 class="review-author">Sofía R. - Medellín</h3>
+              <div class="review-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p class="review-text">"Greeni ha transformado mi balcón. Las guías son súper fáciles de seguir y mi pequeño huerto está prosperando. ¡Gracias!"</p>
+          </div>
+          <div class="review-card">
+            <div class="review-header">
+              <h3 class="review-author">Javier L. - Buenos Aires</h3>
+              <div class="review-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+            <p class="review-text">"El diagnóstico de enfermedades de plantas es una maravilla. Identifiqué un problema a tiempo y salvé mi rosal. ¡Muy recomendado!"</p>
+          </div>
+          <div class="review-card">
+            <div class="review-header">
+              <h3 class="review-author">Isabela M. - Ciudad de México</h3>
+              <div class="review-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p class="review-text">"Me encanta la comunidad. Siempre encuentro consejos útiles y gente dispuesta a ayudar. ¡Es como tener un grupo de jardineros expertos a mi lado!"</p>
+          </div>
+          <div class="review-card">
+            <div class="review-header">
+              <h3 class="review-author">Andrés P. - Santiago</h3>
+              <div class="review-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p class="review-text">"La interfaz es intuitiva y fácil de usar. Desde que uso Greeni, mis plantas de interior nunca han estado tan saludables."</p>
+          </div>
+        </div>
+        <div class="carousel-indicators" id="carouselIndicators"></div>
+      </div>
+    </div>
+  </section>
+  <section id="contacto" class="section-light">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-form-wrapper">
+          <h2 class="contact-title">Contacto</h2>
+          <form id="formContacto" novalidate>
+            <div id="errorContacto" class="error-message"></div>
+            <div class="form-group">
+              <label for="nombre">Nombre - Apellidos</label>
+              <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre completo">
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" required placeholder="Sólo números">
+            </div>
+            <div class="form-group">
+              <label for="correo">Correo</label>
+              <input type="email" id="correo" name="correo" required placeholder="usuario@ejemplo.com">
+            </div>
+            <div class="form-group">
+              <label>Tipo de Usuario</label>
+              <div class="radio-group">
+                <input type="radio" id="aficionado" name="tipoUsuario" value="aficionado" required>
+                <label for="aficionado" class="radio-label">
+                  <span class="radio-button"></span> Aficionado
+                </label>
+                <input type="radio" id="profesional" name="tipoUsuario" value="profesional" required>
+                <label for="profesional" class="radio-label">
+                  <span class="radio-button"></span> Profesional / Experto
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos tu consulta o comentario..." required></textarea>
+            </div>
+            <button type="submit" id="enviarBtn" class="btn-submit" disabled>Enviar Mensaje</button>
+          </form>
+          <p id="mensajeEnviado" class="result-message"></p>
+        </div>
+        <div class="contact-info-wrapper">
+          <p class="info-text">
+            ¿Tienes dudas, sugerencias o quieres conocer más sobre Greeni?
+            Escríbenos y te responderemos lo antes posible.
+          </p>
+          <h3 class="social-title">
+            Nuestras Redes de <span class="highlight-green">Contacto</span>
+          </h3>
+          <p class="social-subtitle">Síguenos para más consejos y novedades:</p>
+          <div class="social-links-grid">
+            <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="#"><i class="fab fa-facebook-f"></i> Greeni_Oficial</a>
+            <a href="#"><i class="fab fa-tiktok"></i> Greeni_Oficial</a>
+            <a href="#"><i class="fab fa-instagram"></i> Greeni_Oficial</a>
+            <a href="#"><i class="fab fa-youtube"></i> Greeni_Oficial</a>
+            <a href="#"><i class="fab fa-pinterest"></i> Greeni_Oficial</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="section-dark">
+    <div class="container footer-content">
+      <div class="footer-column">
+        <h3>Sobre Greeni</h3>
+        <p>Greeni es la plataforma que combina diagnóstico inteligente, guías prácticas y una comunidad global para que tus plantas siempre luzcan saludables.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Enlaces</h3>
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#about">Quiénes somos</a></li>
+          <li><a href="#diagnostico">Diagnóstico</a></li>
+          <li><a href="#guias">Guías</a></li>
+          <li><a href="#comunidad">Comunidad</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contáctanos</h3>
+        <p><i class="fas fa-map-marker-alt"></i> San Miguel, Lima – Perú</p>
+        <p><i class="fas fa-envelope"></i> contacto@greeni.com</p>
+        <p><i class="fas fa-phone"></i> +51 1 44512 12</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2025 Greeni. Todos los derechos reservados.</p>
+      <p><a href="#">Términos y privacidad</a></p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
