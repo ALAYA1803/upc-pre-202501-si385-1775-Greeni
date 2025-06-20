@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000);
     });
   }
+  // SECCIÓN GUÍAS DE CULTIVO
   const explorarGuiasBtn = document.getElementById('explorarGuiasBtn');
   const backToIntroBtn = document.getElementById('back-to-intro-btn');
   const guidesIntroView = document.getElementById('guides-intro');
@@ -133,7 +134,9 @@ document.addEventListener('DOMContentLoaded', () => {
       guidesIntroView.classList.remove('hidden');
     });
   }
-const carouselContainer = document.querySelector('.carousel-container');
+
+  // SECCION DE COMUNIDAD 
+  const carouselContainer = document.querySelector('.carousel-container');
   const reviews = document.querySelectorAll('.review-card');
   const indicatorsContainer = document.getElementById('carouselIndicators');
   let currentIndex = 0;
@@ -179,6 +182,78 @@ const carouselContainer = document.querySelector('.carousel-container');
     updateCarousel(0);
     startCarousel();
   }
+  // VALIDACIÓNDEL FORMULARIO
+  const formContacto = document.getElementById('formContacto');
 
-  
+  if (formContacto) {
+    const enviarBtn = document.getElementById('enviarBtn');
+    const errorContainer = document.getElementById('errorContacto');
+    const successContainer = document.getElementById('mensajeEnviado');
+    const inputs = formContacto.querySelectorAll('input[required], textarea[required]');
+    const validateFormState = () => {
+        let allValid = true;
+        inputs.forEach(input => {
+            if (input.type === 'radio') {
+                if (!document.querySelector(`input[name="${input.name}"]:checked`)) {
+                    allValid = false;
+                }
+            } else if (input.value.trim() === '') {
+                allValid = false;
+            }
+        });
+        enviarBtn.disabled = !allValid;
+    };
+    inputs.forEach(input => input.addEventListener('input', validateFormState));
+    formContacto.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const errors = [];
+      errorContainer.innerHTML = ''; 
+      successContainer.innerHTML = ''; 
+      const fullName = document.getElementById('nombre').value.trim();
+      const phone = document.getElementById('telefono').value.trim();
+      const email = document.getElementById('correo').value.trim();
+      const userTypeEl = document.querySelector('input[name="tipoUsuario"]:checked');
+      const userType = userTypeEl ? userTypeEl.value : "";
+      const message = document.getElementById('mensaje').value.trim();
+      if (!fullName) {
+        errors.push("El campo 'Nombre - Apellidos' es obligatorio.");
+      } else if (!/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]{3,50}$/.test(fullName)) {
+        errors.push("El nombre debe contener solo letras y espacios (3-50 caracteres).");
+      }
+      if (!phone) {
+        errors.push("El campo 'Teléfono' es obligatorio.");
+      } else if (!/^\d{9}$/.test(phone)) {
+        errors.push("El teléfono debe contener 9 números.");
+      }
+      
+      if (!email) {
+        errors.push("El campo 'Correo' es obligatorio.");
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errors.push("Ingresa una dirección de correo electrónico válida.");
+      }
+      
+      if (!userType) {
+        errors.push("Debes seleccionar un 'Tipo de Usuario'.");
+      }
+      
+      if (!message) {
+        errors.push("El campo 'Mensaje' es obligatorio.");
+      } else if (message.length > 500) {
+        errors.push("El mensaje no puede exceder los 500 caracteres.");
+      }
+      if (errors.length > 0) {
+        errorContainer.innerHTML = errors.map(err => `• ${err}`).join('<br>');
+      } else {
+        successContainer.textContent = '¡Mensaje enviado correctamente!';
+        successContainer.style.color = '#005014';       
+        formContacto.reset();
+        enviarBtn.disabled = true; 
+        
+        setTimeout(() => {
+          successContainer.textContent = ''; 
+        }, 4000);
+      }
+    });
+  }
 });
