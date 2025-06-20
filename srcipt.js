@@ -118,8 +118,67 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000);
     });
   }
+  const explorarGuiasBtn = document.getElementById('explorarGuiasBtn');
+  const backToIntroBtn = document.getElementById('back-to-intro-btn');
+  const guidesIntroView = document.getElementById('guides-intro');
+  const guidesGalleryView = document.getElementById('guides-gallery');
 
+  if (explorarGuiasBtn && backToIntroBtn && guidesIntroView && guidesGalleryView) {
+    explorarGuiasBtn.addEventListener('click', () => {
+      guidesIntroView.classList.add('hidden');
+      guidesGalleryView.classList.remove('hidden');
+    });
+    backToIntroBtn.addEventListener('click', () => {
+      guidesGalleryView.classList.add('hidden');
+      guidesIntroView.classList.remove('hidden');
+    });
+  }
+const carouselContainer = document.querySelector('.carousel-container');
+  const reviews = document.querySelectorAll('.review-card');
+  const indicatorsContainer = document.getElementById('carouselIndicators');
+  let currentIndex = 0;
+  let intervalId;
 
+  if (carouselContainer && reviews.length > 0) {
+    for (let i = 0; i < reviews.length; i++) {
+        const button = document.createElement('button');
+        button.classList.add('indicator');
+        button.dataset.index = i;
+        if (i === 0) button.classList.add('active');
+        indicatorsContainer.appendChild(button);
+    }
+    const indicators = Array.from(indicatorsContainer.children);
+
+    function updateCarousel(newIndex, isManual = false) {
+      if (isManual) stopCarousel();
+      
+      const prevIndex = (newIndex - 1 + reviews.length) % reviews.length;
+      const nextIndex = (newIndex + 1) % reviews.length;
+      
+      reviews.forEach(review => review.classList.remove('active', 'prev', 'next'));
+      reviews[newIndex].classList.add('active');
+      reviews[prevIndex].classList.add('prev');
+      reviews[nextIndex].classList.add('next');
+      
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === newIndex);
+      });
+      currentIndex = newIndex;
+      if (isManual) startCarousel();
+    }
+    function nextSlide() { updateCarousel((currentIndex + 1) % reviews.length); }
+    function startCarousel() { intervalId = setInterval(nextSlide, 5000); }
+    function stopCarousel() { clearInterval(intervalId); }
+
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => updateCarousel(index, true));
+    });
+    carouselContainer.addEventListener('mouseenter', stopCarousel);
+    carouselContainer.addEventListener('mouseleave', startCarousel);
+    
+    updateCarousel(0);
+    startCarousel();
+  }
 
   
 });
