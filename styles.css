@@ -185,6 +185,7 @@ max-width: 40ch;
   background: #00380A;
 }
 
+/*SECCIÓN ENCUENTRAN*/
 .encuentro-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -215,6 +216,7 @@ max-width: 40ch;
   color: #005014;
 }
 
+/*SECCION QUINES SOMOS*/
 .card {
   display: flex;
   align-items: center;
@@ -236,6 +238,8 @@ max-width: 40ch;
   object-fit: cover;
 }
 .card-content { flex: 1.2; }
+
+/*SECCIÓN DIAGNÓSTICO*/
 .section-dark { background-color: #005014; color: #FFFFFF; }
 .diagnostico-main-content {
   display: grid;
@@ -371,6 +375,8 @@ input[type=range]::-moz-range-thumb{
 .hidden{
   display:none
 }
+
+/*SECCIÓN GUÍAS DE CULTIVO*/
 .section-light { 
   background-color: #FFFFFF; 
 }
@@ -470,6 +476,8 @@ input[type=range]::-moz-range-thumb{
 .btn-back:hover{
   background-color:#00380A;
   border-color:#00380A}
+
+/*SECCIÓN COMUNIDAD*/
 #comunidad .section-subtitle-cream{
   font-size:1.2rem;
   font-weight:400;
@@ -572,6 +580,8 @@ input[type=range]::-moz-range-thumb{
   background-color:#fff;
   transform:scale(1.2)
 }
+
+/*SECCIÓN CONTACTO*/
 .section-cream { 
   background-color: #FEF9E0; 
 }
@@ -696,7 +706,9 @@ input[type=range]::-moz-range-thumb{
     background-color:#ccc;
     cursor:not-allowed
   }
-  footer.section-dark{
+
+/*FOOTER*/
+footer.section-dark{
   background-color:#1E1E1E;
   color:#EAEAEA;
   padding:3rem 0 1rem
@@ -746,4 +758,105 @@ footer .footer-bottom{
   display:flex;
   justify-content:space-between;
   flex-wrap:wrap
+}
+
+/*RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  h2 { font-size: 2.2rem; }
+  .guides-grid-container { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.2rem !important; }
+  h2 { font-size: 2rem; }
+  section { padding: 3.5rem 0; }
+  .nav-bar.scrolled .menu-icono {
+    filter: none !important;
+  }
+  .register-login { display: none; }
+  
+  .menu-icon-label {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1002;
+  }
+  .menu-icono {
+    width: 28px;
+    height: auto;
+  }
+  .nav-bar.scrolled .menu-icono {
+    filter: invert(1);
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(5px);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .nav-menu ul {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .nav-menu ul li a {
+    color: #005014;
+    display: block;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  #menu-toggle:checked ~ .nav-menu {
+    max-height: 100vh;
+  }
+  .encuentro-content .image-block img {
+    width: 100%;       
+    max-width: 300px; 
+    margin: 0 auto;   
+    display: block;   
+  }
+  .encuentro-content,
+  .diagnostico-main-content,
+  .contact-layout,
+  .guides-card {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .card.reversed {
+    flex-direction: column;
+  }
+  .card.mission .image-block, 
+  .guides-card .guides-image,
+  .encuentro-content .image-block {
+    order: -1; 
+    margin-bottom: 2rem;
+  }
+  .card.reversed .image-block {
+      margin-bottom: 2rem;
+      order: 1;
+  }
+  .hero { min-height: 80vh; }
+  .review-card { min-width: 90%; max-width: 90%; }
+  .social-links-grid, .footer-content, .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+.contact-layout{
+  gap:2rem;
+}
+.footer-bottom{gap:0.5rem;}
 }
