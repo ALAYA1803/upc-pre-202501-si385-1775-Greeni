@@ -140,7 +140,6 @@ h3 {
   display: none;
 }
 
-/*SECCIÓN HERO*/
 .hero {
   background: url('img/menu2.jpg') center/cover no-repeat;
   min-height: 80vh;
@@ -216,7 +215,6 @@ max-width: 40ch;
   color: #005014;
 }
 
-/*SECCION QUINES SOMOS*/
 .card {
   display: flex;
   align-items: center;
@@ -239,7 +237,6 @@ max-width: 40ch;
 }
 .card-content { flex: 1.2; }
 
-/*SECCIÓN DIAGNÓSTICO*/
 .section-dark { background-color: #005014; color: #FFFFFF; }
 .diagnostico-main-content {
   display: grid;
@@ -376,7 +373,6 @@ input[type=range]::-moz-range-thumb{
   display:none
 }
 
-/*SECCIÓN GUÍAS DE CULTIVO*/
 .section-light { 
   background-color: #FFFFFF; 
 }
@@ -477,7 +473,6 @@ input[type=range]::-moz-range-thumb{
   background-color:#00380A;
   border-color:#00380A}
 
-/*SECCIÓN COMUNIDAD*/
 #comunidad .section-subtitle-cream{
   font-size:1.2rem;
   font-weight:400;
@@ -581,7 +576,6 @@ input[type=range]::-moz-range-thumb{
   transform:scale(1.2)
 }
 
-/*SECCIÓN CONTACTO*/
 .section-cream { 
   background-color: #FEF9E0; 
 }
@@ -707,7 +701,6 @@ input[type=range]::-moz-range-thumb{
     cursor:not-allowed
   }
 
-/*FOOTER*/
 footer.section-dark{
   background-color:#1E1E1E;
   color:#EAEAEA;
@@ -760,7 +753,6 @@ footer .footer-bottom{
   flex-wrap:wrap
 }
 
-/*RESPONSIVE DESIGN */
 @media (max-width: 992px) {
   h2 { font-size: 2.2rem; }
   .guides-grid-container { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
