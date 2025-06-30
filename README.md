@@ -1,6 +1,6 @@
 # Greeni • Landing Page de Cuidado de Plantas
 
-![Greeni](img/logo-greeni.png)
+![Greeni](public/assets/img/logo-greeni.png)
 
 Bienvenido al repositorio de la **landing page** para **Greeni**, una plataforma que combina diagnóstico inteligente, guías de cultivo y comunidad colaborativa para amantes de las plantas. Esta página ha sido diseñada para ser moderna, atractiva y completamente responsiva, con el objetivo de presentar la misión, visión y funcionalidades clave del servicio.
 
