@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mensajeAnalisis.style.color = '#003D0F'; 
 
         if (esValidoManual || esValidoFoto) {
-            mensajeAnalisis.textContent = 'Datos actualizados. Si quieres ver los resultados, descarga Greeni.';
+            mensajeAnalisis.textContent = 'Datos actualizados. Si quieres ver los resultados, Ingresa a Greeni.';
         } else {
             if (modoManualActivo) {
                 mensajeAnalisis.textContent = 'Error: Debes ingresar el tipo de planta para analizar.';
