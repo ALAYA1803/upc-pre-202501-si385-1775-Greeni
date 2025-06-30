@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  //SECCIÓN DIAGNÓSTICO
+
   const modoManualBtn = document.getElementById('modoManualBtn');
   const modoFotoBtn = document.getElementById('modoFotoBtn');
   const inputsManual = document.getElementById('inputsManual');
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mensajeAnalisis.style.color = '#003D0F'; 
 
         if (esValidoManual || esValidoFoto) {
-            mensajeAnalisis.textContent = 'Datos actualizados. Si quieres ver los resultados, descarga Greeni.';
+            mensajeAnalisis.textContent = 'Datos actualizados. Si quieres ver los resultados, Ingresa a Greeni.';
         } else {
             if (modoManualActivo) {
                 mensajeAnalisis.textContent = 'Error: Debes ingresar el tipo de planta para analizar.';
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000);
     });
   }
-  // SECCIÓN GUÍAS DE CULTIVO
+
   const explorarGuiasBtn = document.getElementById('explorarGuiasBtn');
   const backToIntroBtn = document.getElementById('back-to-intro-btn');
   const guidesIntroView = document.getElementById('guides-intro');
@@ -135,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // SECCION DE COMUNIDAD 
   const carouselContainer = document.querySelector('.carousel-container');
   const reviews = document.querySelectorAll('.review-card');
   const indicatorsContainer = document.getElementById('carouselIndicators');
@@ -182,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel(0);
     startCarousel();
   }
-  // VALIDACIÓNDEL FORMULARIO
+  
   const formContacto = document.getElementById('formContacto');
 
   if (formContacto) {
