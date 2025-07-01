@@ -1,0 +1,96 @@
+.sidebar {
+    background-color: #FFFFFF;
+    border-right: 1px solid #E2E8F0;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column; 
+    transition: transform 0.3s ease-in-out;
+    height: 95vh; 
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+.sidebar-header img { height: 40px; }
+.sidebar-header .logo-text { font-size: 1.5rem; font-weight: 700; color: var(--verde-oscuro); }
+
+.sidebar-nav { flex-grow: 1; }
+.sidebar-nav ul { list-style: none; padding: 0; }
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: var(--radio-borde);
+    text-decoration: none;
+    color: #4A5568;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+.sidebar-action {
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid #E2E8F0;
+}
+
+.sidebar-action a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 12px; 
+    text-decoration: none;
+    color: #4A5568;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.sidebar-action a i {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.sidebar-action a:hover {
+    background-color: rgba(211, 47, 47, 0.1); 
+    color: #D32F2F; 
+}
+.sidebar-nav li a i { font-size: 1.2rem; width: 24px; text-align: center; }
+.sidebar-nav li a:hover { background-color: var(--crema-fondo); color: var(--texto-principal); }
+.sidebar-nav li a.active {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    box-shadow: 0 4px 12px rgba(0, 80, 20, 0.2);
+}
+
+.sidebar-footer {
+    padding-top: 1rem;
+    border-top: 1px solid var(--borde-suave);
+}
+.user-profile-card { display: flex; align-items: center; gap: 0.75rem; }
+.user-profile-card .avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background-color: #4CAF50; color: var(--blanco);
+    display: flex; align-items: center; justify-content: center; font-weight: 600;
+}
+.user-info .name { font-weight: 600; }
+.user-info .email { font-size: 0.8rem; color: #4A5568; }
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 95vh;
+        z-index: 1000;
+        transform: translateX(-100%); 
+        width: 280px;
+    }
+    body.sidebar-open .sidebar {
+        transform: translateX(0); 
+    }
+}

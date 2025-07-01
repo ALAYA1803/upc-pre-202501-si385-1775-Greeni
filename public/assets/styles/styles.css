@@ -141,7 +141,7 @@ h3 {
 }
 
 .hero {
-  background: url('img/menu2.jpg') center/cover no-repeat;
+  background: url('../img/menu2.jpg') center/cover no-repeat;
   min-height: 80vh;
   position: relative;
   display: flex;

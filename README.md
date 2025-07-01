@@ -1,7 +1,7 @@
 # Greeni • Landing Page de Cuidado de Plantas
-
-![Greeni](img/logo-greeni.png)
-
+<p align="center">
+  <img src="public/assets/img/logo-greeni.png" alt="Greeni Logo" width="300" />
+</p>
 Bienvenido al repositorio de la **landing page** para **Greeni**, una plataforma que combina diagnóstico inteligente, guías de cultivo y comunidad colaborativa para amantes de las plantas. Esta página ha sido diseñada para ser moderna, atractiva y completamente responsiva, con el objetivo de presentar la misión, visión y funcionalidades clave del servicio.
 
 ---
@@ -53,23 +53,37 @@ Bienvenido al repositorio de la **landing page** para **Greeni**, una plataforma
 
 ```plaintext
 /
-├── index.html         # Página principal
-├── styles.css         # Hoja de estilos principal
-├── script.js          # Lógica de interactividad
-├── img/               # Imágenes y assets
-│   ├── logo-greeni.png
-│   ├── menu-icon.png
-│   ├── encuentran.webp
-│   ├── mision.jpg
-│   ├── vision.jpg
-│   ├── plantas.jpeg
-│   ├── guías-cultivo.jpg
-│   ├── guia-suculenta.jpeg
-│   ├── guia-monstera.webp
-│   ├── guia-orquidea.jpg
-│   ├── guia-bonsai.jpeg
-│   └── icon-tab.png
-└── README.md          # Documentación del proyecto
+├── README.md                # Documentación del proyecto
+└── public/                  # Carpeta principal de archivos servidos
+    ├── index.html           # Landing page principal
+    ├── forgotpassword.html  # Recuperación de contraseña
+    ├── login.html           # Inicio de sesión
+    ├── register.html        # Registro de usuarios
+    └── assets/              # Recursos estáticos
+        ├── styles/          # Hojas de estilo CSS
+        │   ├── styles.css           # Estilos globales
+        │   ├── login.css            # Estilos de login
+        │   ├── register.css         # Estilos de registro
+        │   └── forgotpassword.css   # Estilos de recuperación
+        │
+        ├── scripts/         # Lógica JavaScript
+        │   ├── main.js               # Script principal de la landing
+        │   ├── login.js              # Lógica de login
+        │   ├── register.js           # Lógica de registro
+        │   └── forgotpassword.js     # Lógica de recuperación
+        │
+        └── images/          # Imágenes y assets gráficos
+            ├── logo-greeni.png
+            ├── hero-bg.jpg
+            ├── encuentran.webp
+            ├── mision.jpg
+            ├── vision.jpg
+            ├── plantas.jpeg
+            ├── guia-suculenta.jpeg
+            ├── guia-monstera.webp
+            ├── guia-orquidea.jpg
+            ├── guia-bonsai.jpeg
+            └── icon-tab.png
 ```
 ---
 ##  Equipo 
