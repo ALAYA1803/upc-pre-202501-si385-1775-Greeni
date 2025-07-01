@@ -2,14 +2,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
+    const errorMessageElement = document.getElementById('login-error-message');
+    const submitButton = loginForm.querySelector('button[type="submit"]');
+
     loginForm.addEventListener('submit', async (event) => {
         event.preventDefault(); 
+        errorMessageElement.textContent = '';
+        submitButton.disabled = true;
+        submitButton.textContent = 'Verificando...';
+
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
+
         if (!email || !password) {
-            alert('Por favor, completa todos los campos.');
+            showError('Por favor, completa todos los campos.');
             return;
         }
+        
         await checkUserCredentials(email, password);
     });
     async function checkUserCredentials(email, password) {
@@ -20,21 +29,29 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 throw new Error('Hubo un problema al conectar con el servidor.');
             }
-            const users = await response.json(); 
+            
+            const users = await response.json();
+            const user = users[0]; 
+            if (user && user.password === password) {
+                const userData = {
+                    name: user.name,
+                    email: user.email,
+                };
+                sessionStorage.setItem('currentUser', JSON.stringify(userData));
+                window.location.href = 'home.html';
 
-            if (users.length === 0) {
-                alert('Error: Usuario no encontrado. Verifica tu correo electrónico.');
             } else {
-                const user = users[0]; 
-                if (user.password === password) {
-                    alert(`¡Inicio de sesión exitoso! Bienvenido, ${user.name || 'usuario'}.`);
-                } else {
-                    alert('Error: Contraseña incorrecta.');
-                }
+                showError('Correo o contraseña incorrectos. Por favor, inténtalo de nuevo.');
             }
+
         } catch (error) {
             console.error('Error en el inicio de sesión:', error);
-            alert('Ocurrió un error inesperado. Por favor, inténtalo de nuevo más tarde.');
+            showError('Ocurrió un error inesperado. Verifica tu conexión.');
         }
+    }
+    function showError(message) {
+        errorMessageElement.textContent = message;
+        submitButton.disabled = false;
+        submitButton.textContent = 'Iniciar Sesión';
     }
 });

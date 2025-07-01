@@ -8,10 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/styles/login.css">
+
 </head>
+
 <body>
 
+        
     <div class="login-container">
+                <a href="index.html" class="btn-back-home" title="Volver al inicio">
+            <i class="fas fa-times"></i>
+        </a>
         <div class="login-header">
             <a href="index.html" class="logo-link">
                 <img src="assets/img/logo-greeni.png" alt="Logo Greeni">
@@ -42,6 +48,8 @@
                 <a href="forgotpassword.html" class="forgot-password">¿Olvidaste tu contraseña?</a>
             </div>
 
+            <p id="login-error-message" class="error-message"></p>
+
             <button type="submit" class="btn-login">Iniciar Sesión</button>
         </form>
 
@@ -49,6 +57,7 @@
             <p>¿Aún no tienes una cuenta? <a href="register.html">Regístrate aquí</a></p>
         </div>
     </div>
+    
     <script src="assets/scripts/login.js"></script>
 </body>
 </html>
