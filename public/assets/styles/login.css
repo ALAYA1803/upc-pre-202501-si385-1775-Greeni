@@ -40,7 +40,13 @@ body {
 .login-header img {
     width: 60px;
 }
-
+.error-message {
+ color: #D32F2F;
+font-size: 0.9rem;
+text-align: center;
+ min-height: 1.2em;
+ margin-bottom: 1rem;
+ }
 
 .login-header h2 {
     font-size: 1.8rem;
@@ -155,6 +161,22 @@ body {
 
 .login-footer a:hover {
     text-decoration: underline;
+}
+.login-container {
+position: relative; 
+ }
+.btn-back-home {
+ position: absolute;
+ top: 20px;
+right: 25px;
+font-size: 1.5rem;
+color: #aaa;
+text-decoration: none;
+transition: color 0.2s, transform 0.2s;
+}
+.btn-back-home:hover {
+color: #333;
+transform: scale(1.1);
 }
 
 @media (max-width: 500px) {
