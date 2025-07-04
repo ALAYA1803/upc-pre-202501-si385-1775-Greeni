@@ -7,14 +7,12 @@
     --borde-suave: #E2E8F0;
     --fondo-suave: #F7FAFC;
     --radio-borde: 12px;
-    /* Colores para eventos */
     --color-riego: #3B82F6;
     --color-fertilizacion: #F59E0B;
     --color-poda: #8B5CF6;
     --color-otro: #6B7280;
 }
 
-/* --- Layout Principal --- */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -53,8 +51,6 @@
     flex-grow: 1;
     min-height: 500px;
 }
-
-/* --- Botones consistentes con el diseño --- */
 .btn-primary {
     background-color: var(--verde-oscuro);
     color: var(--blanco);
@@ -112,7 +108,6 @@
     background-color: var(--fondo-suave);
 }
 
-/* --- Estilos para FullCalendar --- */
 :root {
     --fc-border-color: var(--borde-suave);
     --fc-daygrid-event-dot-width: 8px;
@@ -197,7 +192,6 @@
     margin: 1px;
 }
 
-/* --- Barra Lateral de Eventos --- */
 .day-events-sidebar .card {
     height: 100%;
     display: flex;
@@ -271,7 +265,6 @@
     background-color: var(--color-otro);
 }
 
-/* --- Modal para crear eventos --- */
 .modal {
     display: none;
     position: fixed;
@@ -383,8 +376,6 @@
         opacity: 1;
     }
 }
-
-/* --- Responsive Design --- */
 @media (max-width: 1200px) {
     .calendar-layout {
         grid-template-columns: 1fr 280px;
@@ -568,7 +559,6 @@
     }
 }
 
-/* --- Mejoras adicionales para UX --- */
 .fc .fc-daygrid-day {
     transition: background-color 0.2s ease;
 }

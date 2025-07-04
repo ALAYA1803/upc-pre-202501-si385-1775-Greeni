@@ -11,8 +11,6 @@
     --sombra-elevada: 0 4px 20px rgba(0, 0, 0, 0.07);
     --sombra-intensa: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
-
-/* --- Header Principal --- */
 .main-header {
     margin-bottom: 2rem;
     padding: 0 1rem;
@@ -33,7 +31,6 @@
     font-weight: 400;
 }
 
-/* --- Layout Principal --- */
 .dashboard-grid {
     display: grid;
     grid-template-columns: 1fr 320px;
@@ -655,8 +652,6 @@
     outline: 2px solid var(--verde-claro);
     outline-offset: 2px;
 }
-
-/* --- Mejoras visuales adicionales --- */
 .dashboard-card .card-header h3::before {
     content: '';
     display: inline-block;

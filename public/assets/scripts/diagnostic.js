@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Referencias a los elementos del DOM (sin cambios) ---
     const imageUploader = document.getElementById('image-uploader');
     const fileInput = document.getElementById('file-input');
     const imagePreviewContainer = document.getElementById('image-preview-container');
@@ -13,8 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const humidityValue = document.getElementById('humidity-value');
     const temperatureValue = document.getElementById('temperature-value');
     const phValue = document.getElementById('ph-value');
-
-    // --- Lógica para subir imágenes (sin cambios) ---
     imageUploader.addEventListener('click', () => fileInput.click());
     
     fileInput.addEventListener('change', (e) => {
@@ -55,53 +52,28 @@ document.addEventListener('DOMContentLoaded', () => {
         imagePreviewContainer.classList.add('hidden');
         imagePreview.src = '#';
     });
-
-    // =================================================================
-    // ✨ NUEVA LÓGICA PROFESIONAL PARA LOS SLIDERS ✨
-    // =================================================================
-
-    /**
-     * Función reutilizable para actualizar un slider y su valor,
-     * y aplicar el efecto de relleno en la pista.
-     * @param {HTMLInputElement} slider - El elemento input range.
-     * @param {HTMLElement} valueDisplay - El elemento span que muestra el valor.
-     * @param {string} unit - La unidad a mostrar (ej: '%', '°C', 'pH').
-     */
     function updateSlider(slider, valueDisplay, unit = '') {
         if (!slider || !valueDisplay) return;
-
-        // Función interna que calcula y aplica el fondo de relleno
         const applyFill = (el) => {
             const percentage = ((el.value - el.min) / (el.max - el.min)) * 100;
-            // Usamos los colores de tu marca para consistencia
-            const activeColor = '#005014'; // --verde-oscuro
-            const inactiveColor = '#A5D6A7'; // --verde-pista
+            const activeColor = '#005014'; 
+            const inactiveColor = '#A5D6A7';
             el.style.background = `linear-gradient(to right, ${activeColor} ${percentage}%, ${inactiveColor} ${percentage}%)`;
         };
-
-        // Listener que se activa cada vez que se mueve el slider
         slider.addEventListener('input', (e) => {
             const value = e.target.value;
-            // Formato especial para pH para mostrar un decimal
             if (unit === 'pH') {
                 valueDisplay.textContent = parseFloat(value).toFixed(1);
             } else {
                 valueDisplay.textContent = `${value}${unit}`;
             }
-            applyFill(e.target); // Aplicamos el relleno
+            applyFill(e.target); 
         });
-
-        // Llamada inicial para que los sliders se muestren correctamente al cargar la página
         applyFill(slider);
     }
-
-    // Activamos la nueva función para cada uno de nuestros sliders
     updateSlider(humiditySlider, humidityValue, '%');
     updateSlider(temperatureSlider, temperatureValue, '°C');
     updateSlider(phSlider, phValue, 'pH');
-
-
-    // --- Lógica del botón de análisis (sin cambios) ---
     analyzeBtn.addEventListener('click', () => {
         analyzeBtn.disabled = true;
         analyzeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Analizando...';

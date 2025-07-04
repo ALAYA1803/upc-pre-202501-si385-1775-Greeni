@@ -26,9 +26,7 @@
             </header>
             
             <div class="diagnostic-layout">
-                <!-- Columna para las opciones de diagnóstico -->
                 <div class="diagnostic-options">
-                    <!-- Opción 1: Análisis por Foto -->
                     <div class="card">
                         <div class="card-header">
                             <h3><i class="fas fa-camera-retro"></i> Análisis por Foto</h3>
@@ -46,19 +44,12 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Opción 2: Diagnóstico Manual -->
                     <div class="card">
                         <div class="card-header">
                             <h3><i class="fas fa-sliders-h"></i> Diagnóstico Manual</h3>
                         </div>
                         <div class="card-body">
                             <form id="manual-form">
-                                <!--
-                                ================================================================
-                                AQUÍ ESTÁ LA CORRECCIÓN: CAMPO PARA EL NOMBRE DE LA PLANTA
-                                ================================================================
-                                -->
                                 <div class="form-group">
                                      <label for="plant-name">Nombre de la Planta</label>
                                      <input type="text" id="plant-name" placeholder="Ej: Rosa, Tomate, Monstera...">
@@ -84,28 +75,22 @@
                         <i class="fas fa-search"></i> Analizar Ahora
                     </button>
                 </div>
-
-                <!-- Columna para mostrar los resultados -->
                 <aside class="diagnostic-results">
                     <div class="card results-card" id="results-card">
                         <div class="card-header">
                             <h3>Resultados del Análisis</h3>
                         </div>
                         <div class="card-body" id="results-body">
-                            <!-- Estado inicial antes del análisis -->
                             <div class="placeholder-results">
                                 <i class="fas fa-microscope"></i>
                                 <p>Los resultados de tu diagnóstico aparecerán aquí.</p>
                             </div>
-                            <!-- Los resultados dinámicos se insertarán aquí -->
                         </div>
                     </div>
                 </aside>
             </div>
         </main>
     </div>
-
-    <!-- Scripts -->
     <script src="public/assets/scripts/main.js" defer></script>
     <script src="public/assets/scripts/diagnostic.js" defer></script>
 </body>

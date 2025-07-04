@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderPlants = () => {
         const plantGallery = document.getElementById('plant-gallery');
         if (!plantGallery) return;
-        plantGallery.innerHTML = ''; // Limpiar galería
+        plantGallery.innerHTML = ''; 
 
         samplePlants.forEach(plant => {
             const plantCard = document.createElement('div');
