@@ -3,33 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="public/assets/img/logo-greeni.png">
     <title>Home - Greeni</title>
+    
+    <!-- Iconos y Fuentes -->
+    <link rel="icon" type="image/png" href="https://i.imgur.com/gzaZ35G.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Hojas de Estilo -->
     <link rel="stylesheet" href="public/assets/styles/main.css">
     <link rel="stylesheet" href="public/assets/styles/sidebar.css">
+    <link rel="stylesheet" href="public/assets/styles/home.css">
 </head>
 <body>
 
     <div class="app-layout">
+        <!-- El sidebar reutilizable se cargará aquí -->
         <div id="sidebar-container"></div>
+
+        <!-- Contenido principal del Dashboard -->
         <main class="main-content">
             <header class="main-header">
                 <button class="menu-toggle-btn" id="menu-toggle">
                     <i class="fas fa-bars"></i>
                 </button>
-                <h1>Home</h1>
+                <div class="header-content">
+                    <h1 id="welcome-message">Buenos días, ...</h1>
+                    <p>Aquí tienes el resumen de tu jardín para hoy.</p>
+                </div>
             </header>
             
-            <section class="content-area">
-                <h2>Resumen de Actividad</h2>
-                <div class="card">
-                    <p>Bienvenido a tu panel de control. Aquí verás las actualizaciones más importantes de tu jardín y de la comunidad.</p>
+            <div class="dashboard-grid">
+                <!-- Columna Principal de Contenido -->
+                <div class="main-column">
+                    <!-- Acciones Rápidas -->
+                    <section class="quick-actions">
+                        <button class="action-card">
+                            <i class="fas fa-camera-retro"></i>
+                            <span>Diagnosticar Planta</span>
+                        </button>
+                        <button class="action-card">
+                            <i class="fas fa-plus"></i>
+                            <span>Añadir Planta</span>
+                        </button>
+                    </section>
+
+                    <!-- Tareas del Día -->
+                    <section class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Tareas para Hoy</h3>
+                        </div>
+                        <ul class="task-list" id="task-list">
+                            <!-- Las tareas se insertarán aquí con JS -->
+                        </ul>
+                    </section>
+
+                    <!-- Mis Plantas -->
+                    <section class="dashboard-card">
+                         <div class="card-header">
+                            <h3>Mis Plantas</h3>
+                        </div>
+                        <div class="plant-gallery" id="plant-gallery">
+                            <!-- Las tarjetas de plantas se insertarán aquí con JS -->
+                        </div>
+                    </section>
                 </div>
-            </section>
+
+                <!-- Columna Lateral de Widgets -->
+                <aside class="side-column">
+                    <div class="dashboard-card">
+                        <div class="card-header"><h3>Clima Local</h3></div>
+                        <div class="weather-widget">
+                            <i class="fas fa-sun"></i>
+                            <div class="weather-info">
+                                <span class="temperature">22°C</span>
+                                <span class="condition">Soleado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-header"><h3>Estadísticas</h3></div>
+                        <div class="stats-widget">
+                            <div class="stat-item">
+                                <span>Racha de Cuidado</span>
+                                <strong>15 días 🔥</strong>
+                            </div>
+                            <div class="stat-item">
+                                <span>Tareas Completadas</span>
+                                <strong>8 de 10</strong>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
         </main>
     </div>
+
+    <!-- Scripts -->
     <script src="public/assets/scripts/main.js" defer></script>
+    <script src="public/assets/scripts/home.js" defer></script>
 </body>
 </html>

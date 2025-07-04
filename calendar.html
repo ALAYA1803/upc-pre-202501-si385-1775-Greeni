@@ -3,33 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="public/assets/img/logo-greeni.png">
-    <title>Calendar - Greeni</title>
+    <title>Calendario - Greeni</title>
+    
+    <!-- Iconos y Fuentes -->
+    <link rel="icon" type="image/png" href="https://i.imgur.com/gzaZ35G.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Hojas de Estilo -->
     <link rel="stylesheet" href="public/assets/styles/main.css">
     <link rel="stylesheet" href="public/assets/styles/sidebar.css">
+    <link rel="stylesheet" href="public/assets/styles/calendar.css">
+
+    <!-- FullCalendar (Librería para el Calendario) -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
 </head>
 <body>
 
     <div class="app-layout">
+        <!-- El sidebar reutilizable se cargará aquí -->
         <div id="sidebar-container"></div>
+
+        <!-- Contenido principal de la página de Calendario -->
         <main class="main-content">
             <header class="main-header">
                 <button class="menu-toggle-btn" id="menu-toggle">
                     <i class="fas fa-bars"></i>
                 </button>
-                <h1>Calendario</h1>
+                <div class="header-content">
+                    <h1>Calendario de Cuidado</h1>
+                </div>
+                <button class="btn-primary" id="add-event-btn">
+                    <i class="fas fa-plus"></i> Crear Recordatorio
+                </button>
             </header>
             
-            <section class="content-area">
-                <h2>Resumen de Actividad</h2>
-                <div class="card">
-                    <p>Bienvenido a tu panel de control. Aquí verás las actualizaciones más importantes de tu jardín y de la comunidad.</p>
+            <div class="calendar-layout">
+                <!-- El calendario se renderizará aquí -->
+                <div class="calendar-wrapper">
+                    <div id="calendar-container"></div>
                 </div>
-            </section>
+
+                <!-- Barra lateral para mostrar los eventos del día -->
+                <aside class="day-events-sidebar">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 id="selected-day-label">Tareas para Hoy</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul id="day-events-list">
+                                <!-- Los eventos del día seleccionado se mostrarán aquí -->
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
         </main>
     </div>
+
+    <!-- Modal para Añadir Nuevos Eventos -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2>Nuevo Recordatorio</h2>
+                <button class="close-modal-btn">&times;</button>
+            </header>
+            <form id="event-form">
+                <div class="form-group">
+                    <label for="event-title">Título de la Tarea</label>
+                    <input type="text" id="event-title" placeholder="Ej: Regar Ficus" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-date">Fecha</label>
+                    <input type="date" id="event-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-type">Tipo de Tarea</label>
+                    <select id="event-type">
+                        <option value="riego">Riego</option>
+                        <option value="fertilizacion">Fertilización</option>
+                        <option value="poda">Poda</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancel-event-btn">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar Tarea</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="public/assets/scripts/main.js" defer></script>
+    <script src="public/assets/scripts/calendar.js" defer></script>
 </body>
 </html>
