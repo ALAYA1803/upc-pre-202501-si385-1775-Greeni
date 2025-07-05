@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/png" href="public/assets/img/logo-greeni.png"/>
+    <title>Publicar - Greeni</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="public/assets/styles/sidebar.css"/>
+    <link rel="stylesheet" href="public/assets/styles/comunity.css"/>
+    <style>
+        .app-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        #sidebar-container {
+            width: 260px;
+            background: #fff;
+            border-right: 1px solid #eee;
+            min-height: 100vh;
+            padding-top: 20px;
+        }
+        #sidebar-container ul {
+            list-style: none;
+            padding: 0 20px;
+        }
+        #sidebar-container li {
+            margin-bottom: 20px;
+        }
+        #sidebar-container a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        #sidebar-container a:hover {
+            background: #f0f2f5;
+        }
+        /* Asegura que el contenido principal se muestre correctamente */
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+    </style>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+        }
+        .publicar-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 700px;
+            min-width: 400px;
+            padding: 40px 36px 30px 36px;
+        }
+        .publicar-card header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .publicar-card header h2 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #555;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+        .user-info div {
+            display: flex;
+            flex-direction: column;
+        }
+        .user-info span {
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .user-info small {
+            color: #555;
+            font-size: 12px;
+        }
+        .publicar-textarea {
+            width: 100%;
+            border: none;
+            resize: none;
+            font-size: 17px;
+            min-height: 120px;
+            outline: none;
+            margin-bottom: 18px;
+            background: #fafaf8;
+            border-radius: 8px;
+            padding: 12px 14px;
+        }
+        .image-preview {
+            width: 100%;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            text-align: center;
+            padding: 32px 0;
+            cursor: pointer;
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 18px;
+            background: #fafaf8;
+            transition: border-color 0.2s;
+        }
+        .image-preview:hover {
+            border-color: #005014;
+        }
+        .image-preview img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .add-options {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 18px;
+            gap: 10px;
+        }
+        .add-options i {
+            font-size: 20px;
+            cursor: pointer;
+            color: #555;
+            margin: 0 10px;
+        }
+        .publicar-button {
+            width: 100%;
+            background: #005014;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 8px;
+        }
+        .publicar-button:hover {
+            background: #003d29;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar dinámico -->
+        <div id="sidebar-container"></div>
+        <!-- Área principal de publicación -->
+        <div class="main-content" style="background: #F8F7F4; min-height: 100vh;">
+            <div class="publicar-card" style="margin: 40px auto;">
+                <header>
+                    <h2>Crear publicación</h2>
+                    <button class="close-btn" onclick="window.location.href='comunity.html'"><i class="fas fa-times"></i></button>
+                </header>
+                <div class="user-info">
+                    <img src="public/assets/img/avatar.jpg" alt="Usuario">
+                    <div>
+                        <span>Renzo Arteaga</span>
+                        <small><i class="fas fa-user-friends"></i> Amigos</small>
+                    </div>
+                </div>
+                <textarea class="publicar-textarea" placeholder="¿Qué estás pensando, Renzo?"></textarea>
+                <div class="image-preview" id="image-preview" onclick="document.getElementById('file-input').click()">
+                    <i class="fas fa-image"></i> Añadir foto o video
+                </div>
+                <input type="file" id="file-input" accept="image/*,video/*" style="display:none" onchange="previewFile(event)">
+                <div class="add-options">
+                    <i class="fas fa-photo-video"></i>
+                    <i class="fas fa-user-tag"></i>
+                    <i class="fas fa-smile"></i>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-gif"></i>
+                </div>
+                <button class="publicar-button">Publicar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function previewFile(event) {
+            const previewContainer = document.getElementById('image-preview');
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(){
+                previewContainer.innerHTML = '<img src="' + reader.result + '" alt="Vista previa">';
+            }
+
+            if(file){
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Evitar que el botón "Publicar" recargue la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const publicarBtn = document.querySelector('.publicar-button');
+            if (publicarBtn) {
+                publicarBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Aquí puedes agregar la lógica para publicar
+                    alert('¡Publicación realizada con éxito!');
+                });
+            }
+
+            // Mensaje al dar click en "Seguir" en recomendaciones de amigos
+            document.querySelectorAll('.friend-recommendation button, .friend-recommendation .green-button').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    // Buscar el nombre del usuario
+                    let name = btn.closest('.friend-recommendation')?.querySelector('p, .friend-info span, .friend-info p, .friend-name');
+                    let nombre = name ? name.textContent.trim() : 'este usuario';
+                    alert('¡Empezaste a seguir a ' + nombre + '!');
+                });
+            });
+        });
+    </script>
+
+    <script src="public/assets/scripts/main.js" defer></script>
+</body>
+</html>
