@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="public/assets/img/logo-greeni.png">
+    <title>Mensajería - Greeni</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/assets/styles/main.css">
+    <link rel="stylesheet" href="public/assets/styles/sidebar.css">
+    <link rel="stylesheet" href="public/assets/styles/comunity.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="public/assets/styles/mesagge.css">
+</head>
+<body>
+
+<div class="app-layout">
+    <div id="sidebar-container"></div>
+    <div class="messenger-container">
+        <aside class="sidebar">
+            <h3>Chats</h3>
+            <div class="chat-list">
+                <div class="chat-list-item" data-contact="Juan Pérez">Juan Pérez</div>
+                <div class="chat-list-item" data-contact="Ana López">Ana López</div>
+                <div class="chat-list-item" data-contact="Pedro Sánchez">Pedro Sánchez</div>
+                <div class="chat-list-item" data-contact="Daniela Flores">Daniela Flores</div>
+                <div class="chat-list-item" data-contact="Soporte Greeni">Soporte Greeni</div>
+            </div>
+        </aside>
+        <main class="chat-main">
+            <header class="chat-header">
+                <span id="contact-name">Nombre del contacto</span>
+                <button>Perfil</button>
+            </header>
+            <section class="chat-messages" id="chat-messages">
+            </section>
+            <footer class="chat-input">
+                <input type="text" id="message-input" placeholder="Escribe un mensaje..."/>
+                <button id="send-btn">Enviar</button>
+            </footer>
+        </main>
+        <aside class="chat-info">
+            <h3>Información del Chat</h3>
+            <p id="info-user">Usuario: ---</p>
+            <p>Estado: Activo</p>
+            <p>Miembro desde: 2024</p>
+            <hr/>
+            <p>Personalización y archivos próximamente.</p>
+        </aside>
+
+    </div>
+</div>
+
+<script src="public/assets/scripts/main.js" defer></script>
+
+<script>
+    const sendBtn = document.getElementById('send-btn');
+    const messageInput = document.getElementById('message-input');
+    const chatMessages = document.getElementById('chat-messages');
+    const chatListItems = document.querySelectorAll('.chat-list-item');
+    const contactName = document.getElementById('contact-name');
+    const infoUser = document.getElementById('info-user');
+
+    const conversations = {
+        "Juan Pérez": [],
+        "Ana López": [],
+        "Pedro Sánchez": [],
+        "Daniela Flores": [],
+        "Soporte Greeni": []
+    };
+
+    let currentContact = null;
+
+    chatListItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const contact = item.getAttribute('data-contact');
+            currentContact = contact;
+            contactName.textContent = contact;
+            infoUser.textContent = "Usuario: " + contact;
+            loadConversation(contact);
+        });
+    });
+
+    function loadConversation(contact) {
+        chatMessages.innerHTML = '';
+        conversations[contact].forEach(msg => {
+            const div = document.createElement('div');
+            div.classList.add('message');
+            if (msg.sender === 'me') {
+                div.classList.add('sent');
+            }
+            div.textContent = msg.text;
+            chatMessages.appendChild(div);
+        });
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    sendBtn.addEventListener('click', () => {
+        const text = messageInput.value.trim();
+        if (text !== '' && currentContact !== null) {
+            const msg = { sender: 'me', text: text };
+            conversations[currentContact].push(msg);
+
+            const div = document.createElement('div');
+            div.classList.add('message', 'sent');
+            div.textContent = text;
+            chatMessages.appendChild(div);
+
+            messageInput.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        } else if (currentContact === null) {
+            alert('Selecciona un contacto antes de enviar un mensaje.');
+        }
+    });
+</script>
+</body>
+</html>

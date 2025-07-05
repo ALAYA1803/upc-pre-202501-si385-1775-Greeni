@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diagnóstico - Greeni</title>
-    <link rel="icon" type="image/png" href="https://i.imgur.com/gzaZ35G.png">
+    <link rel="icon" type="image/png" href="public/assets/img/logo-greeni.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="public/assets/styles/main.css">
@@ -15,8 +15,6 @@
 
     <div class="app-layout">
         <div id="sidebar-container"></div>
-
-        <!-- Contenido principal de la página de Diagnóstico -->
         <main class="main-content">
             <header class="main-header">
                 <button class="menu-toggle-btn" id="menu-toggle">
@@ -24,7 +22,7 @@
                 </button>
                 <h1 class="page-title">Diagnóstico de Plantas</h1>
             </header>
-            
+
             <div class="diagnostic-layout">
                 <div class="diagnostic-options">
                     <div class="card">
@@ -54,7 +52,7 @@
                                      <label for="plant-name">Nombre de la Planta</label>
                                      <input type="text" id="plant-name" placeholder="Ej: Rosa, Tomate, Monstera...">
                                 </div>
-                                
+
                                 <div class="form-group slider-group">
                                     <label for="humidity">Humedad del Suelo: <span id="humidity-value">50%</span></label>
                                     <input type="range" id="humidity" min="0" max="100" value="50">
@@ -70,7 +68,7 @@
                             </form>
                         </div>
                     </div>
-                    
+
                     <button class="btn-primary analyze-btn" id="analyze-btn">
                         <i class="fas fa-search"></i> Analizar Ahora
                     </button>
