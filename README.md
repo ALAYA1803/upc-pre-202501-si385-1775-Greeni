@@ -53,37 +53,69 @@ Bienvenido al repositorio de la **landing page** para **Greeni**, una plataforma
 
 ```plaintext
 /
-├── README.md                # Documentación del proyecto
-└── public/                  # Carpeta principal de archivos servidos
-    ├── index.html           # Landing page principal
-    ├── forgotpassword.html  # Recuperación de contraseña
-    ├── login.html           # Inicio de sesión
-    ├── register.html        # Registro de usuarios
-    └── assets/              # Recursos estáticos
-        ├── styles/          # Hojas de estilo CSS
-        │   ├── styles.css           # Estilos globales
-        │   ├── login.css            # Estilos de login
-        │   ├── register.css         # Estilos de registro
-        │   └── forgotpassword.css   # Estilos de recuperación
-        │
-        ├── scripts/         # Lógica JavaScript
-        │   ├── main.js               # Script principal de la landing
-        │   ├── login.js              # Lógica de login
-        │   ├── register.js           # Lógica de registro
-        │   └── forgotpassword.js     # Lógica de recuperación
-        │
-        └── images/          # Imágenes y assets gráficos
-            ├── logo-greeni.png
-            ├── hero-bg.jpg
-            ├── encuentran.webp
-            ├── mision.jpg
-            ├── vision.jpg
-            ├── plantas.jpeg
-            ├── guia-suculenta.jpeg
-            ├── guia-monstera.webp
-            ├── guia-orquidea.jpg
-            ├── guia-bonsai.jpeg
-            └── icon-tab.png
+├── calendar.html             # Página de calendario
+├── comunity.html             # Página de comunidad
+├── diagnostic.html           # Página de diagnóstico
+├── forgotpassword.html       # Recuperación de contraseña
+├── guides.html               # Guías de cultivo
+├── home.html                 # Página principal de usuario
+├── index.html                # Landing page principal
+├── login.html                # Inicio de sesión
+├── mesagge.html              # Página de mensajes
+├── perfil.html               # Perfil de usuario
+├── public.html               # Página pública
+├── README.md                 # Documentación del proyecto
+├── register.html             # Registro de usuarios
+├── sidebar.html              # Barra lateral
+├── .idea/                    # Configuración del IDE
+│   ├── .gitignore
+│   ├── modules.xml
+│   ├── upc-pre-202501-si385-1775-Greeni.iml
+│   └── vcs.xml
+└── public/                   # Carpeta de contenido servido
+    └── assets/
+        ├── img/              # Imágenes y gráficos
+        │   ├── encuentran.webp
+        │   ├── guia-bonsai.jpeg
+        │   ├── guia-monstera.webp
+        │   ├── guia-orquidea.jpg
+        │   ├── guia-suculenta.jpeg
+        │   ├── guias-cultivo.jpg
+        │   ├── hero-bg.jpg
+        │   ├── logo-greeni.png
+        │   ├── logo-greeni1.png
+        │   ├── menu-icon.png
+        │   ├── menu.jpg
+        │   ├── menu2.jpg
+        │   ├── mision.jpg
+        │   ├── plantas.jpeg
+        │   └── vision.jpg
+        ├── scripts/          # Lógica JavaScript
+        │   ├── calendar.js
+        │   ├── diagnostic.js
+        │   ├── forgotpassword.js
+        │   ├── guides.js
+        │   ├── home.js
+        │   ├── login.js
+        │   ├── main.js
+        │   ├── perfil.js
+        │   ├── register.js
+        │   └── script.js
+        └── styles/           # Hojas de estilo CSS
+            ├── calendar.css
+            ├── comunity.css
+            ├── diagnostic.css
+            ├── guides.css
+            ├── home.css
+            ├── login.css
+            ├── main.css
+            ├── mesagge.css
+            ├── perfil.css
+            ├── public.css
+            ├── register.css
+            ├── sidebar.css
+            └── styles.css
+
 ```
 ---
 ##  Equipo 
