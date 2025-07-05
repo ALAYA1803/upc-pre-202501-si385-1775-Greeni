@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/png" href="public/assets/img/logo-greeni.png"/>
+    <title>Publicar - Greeni</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="public/assets/styles/sidebar.css"/>
+    <link rel="stylesheet" href="public/assets/styles/main.css">
+    <link rel="stylesheet" href="public/assets/styles/comunity.css"/>
+    <link rel="stylesheet" href="public/assets/styles/public.css"/>
+
+</head>
+<body>
+<div class="app-layout">
+    <div id="sidebar-container"></div>
+    <div class="main-content" style="background: #F8F7F4; min-height: 100vh;">
+        <div class="publicar-card" style="margin: 40px auto;">
+            <header>
+                <h2>Crear publicación</h2>
+                <button class="close-btn" onclick="window.location.href='comunity.html'"><i class="fas fa-times"></i></button>
+            </header>
+            <div class="user-info">
+                <img src="https://i.pravatar.cc/20" alt="Avatar" class="avatar">
+                <div>
+                    <span>Renzo Arteaga</span>
+                    <small><i class="fas fa-user-friends"></i> Amigos</small>
+                </div>
+            </div>
+            <textarea class="publicar-textarea" placeholder="¿Qué estás pensando, Renzo?"></textarea>
+            <div class="image-preview" id="image-preview" onclick="document.getElementById('file-input').click()">
+                <i class="fas fa-image"></i> Añadir foto o video
+            </div>
+            <input type="file" id="file-input" accept="image/*,video/*" style="display:none" onchange="previewFile(event)">
+            <div class="add-options">
+                <i class="fas fa-photo-video"></i>
+                <i class="fas fa-user-tag"></i>
+                <i class="fas fa-smile"></i>
+                <i class="fas fa-map-marker-alt"></i>
+                <i class="fas fa-gif"></i>
+            </div>
+            <button class="publicar-button">Publicar</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function previewFile(event) {
+        const previewContainer = document.getElementById('image-preview');
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function(){
+            previewContainer.innerHTML = '<img src="' + reader.result + '" alt="Vista previa">';
+        }
+
+        if(file){
+            reader.readAsDataURL(file);
+        }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        const publicarBtn = document.querySelector('.publicar-button');
+        if (publicarBtn) {
+            publicarBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('¡Publicación realizada con éxito!');
+            });
+        }
+        document.querySelectorAll('.friend-recommendation button, .friend-recommendation .green-button').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                // Buscar el nombre del usuario
+                let name = btn.closest('.friend-recommendation')?.querySelector('p, .friend-info span, .friend-info p, .friend-name');
+                let nombre = name ? name.textContent.trim() : 'este usuario';
+                alert('¡Empezaste a seguir a ' + nombre + '!');
+            });
+        });
+    });
+</script>
+
+<script src="public/assets/scripts/main.js" defer></script>
+</body>
+</html>

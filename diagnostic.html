@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico - Greeni</title>
+    <link rel="icon" type="image/png" href="public/assets/img/logo-greeni.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="public/assets/styles/main.css">
+    <link rel="stylesheet" href="public/assets/styles/sidebar.css">
+    <link rel="stylesheet" href="public/assets/styles/diagnostic.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        <div id="sidebar-container"></div>
+        <main class="main-content">
+            <header class="main-header">
+                <button class="menu-toggle-btn" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="page-title">Diagnóstico de Plantas</h1>
+            </header>
+
+            <div class="diagnostic-layout">
+                <div class="diagnostic-options">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-camera-retro"></i> Análisis por Foto</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="image-uploader" class="image-upload-area">
+                                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                <p><strong>Arrastra una foto aquí</strong> o haz clic para seleccionar</p>
+                                <span>Sube una imagen clara de la hoja afectada</span>
+                            </div>
+                            <input type="file" id="file-input" accept="image/*" hidden>
+                            <div id="image-preview-container" class="image-preview-container hidden">
+                                <img id="image-preview" src="#" alt="Vista previa de la planta">
+                                <button id="remove-image-btn" class="remove-image-btn">&times;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-sliders-h"></i> Diagnóstico Manual</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="manual-form">
+                                <div class="form-group">
+                                     <label for="plant-name">Nombre de la Planta</label>
+                                     <input type="text" id="plant-name" placeholder="Ej: Rosa, Tomate, Monstera...">
+                                </div>
+
+                                <div class="form-group slider-group">
+                                    <label for="humidity">Humedad del Suelo: <span id="humidity-value">50%</span></label>
+                                    <input type="range" id="humidity" min="0" max="100" value="50">
+                                </div>
+                                <div class="form-group slider-group">
+                                    <label for="temperature">Temperatura: <span id="temperature-value">22°C</span></label>
+                                    <input type="range" id="temperature" min="0" max="40" value="22">
+                                </div>
+                                <div class="form-group slider-group">
+                                    <label for="ph">pH del Suelo: <span id="ph-value">6.5</span></label>
+                                    <input type="range" id="ph" min="4" max="9" value="6.5" step="0.1">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary analyze-btn" id="analyze-btn">
+                        <i class="fas fa-search"></i> Analizar Ahora
+                    </button>
+                </div>
+                <aside class="diagnostic-results">
+                    <div class="card results-card" id="results-card">
+                        <div class="card-header">
+                            <h3>Resultados del Análisis</h3>
+                        </div>
+                        <div class="card-body" id="results-body">
+                            <div class="placeholder-results">
+                                <i class="fas fa-microscope"></i>
+                                <p>Los resultados de tu diagnóstico aparecerán aquí.</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script src="public/assets/scripts/main.js" defer></script>
+    <script src="public/assets/scripts/diagnostic.js" defer></script>
+</body>
+</html>

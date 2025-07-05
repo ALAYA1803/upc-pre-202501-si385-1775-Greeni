@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="public/assets/img/logo-greeni.png">
+    <title>Comunidad - Greeni</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/assets/styles/sidebar.css">
+    <link rel="stylesheet" href="public/assets/styles/main.css">
+    <link rel="stylesheet" href="public/assets/styles/comunity.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div class="app-layout">
+    <div id="sidebar-container"></div>
+    <div class="main-content">
+        <div class="green-bar">
+            <h1>Comunidad</h1>
+            <div style="display: flex; align-items: center;">
+                <header class="main-header">
+                    <button class="menu-toggle-btn" id="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                </header>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <a href="mesagge.html" class="green-button">
+                    <i class="fas fa-comment"></i> Mensajes
+                </a>
+                <a href="public.html" class="green-button">
+                    <i class="fas fa-plus"></i> Publicar
+                </a>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="content-section">
+                <section class="content-area">
+                    <h2>Para ti</h2>
+                    <div class="stories-container">
+                        <div class="story-card"><h3>Historia 1</h3></div>
+                        <div class="story-card"><h3>Historia 2</h3></div>
+                        <div class="story-card"><h3>Historia 3</h3></div>
+                        <div class="story-card"><h3>Historia 4</h3></div>
+                        <div class="story-card"><h3>Historia 5</h3></div>
+                        <div class="story-card"><a href="#">Ver más</a></div>
+                    </div>
+                </section>
+                <section class="content-area">
+                    <div class="post">
+                        <div class="post-header">
+                            <div class="user-info-container">
+                                <img src="https://i.pravatar.cc/60" alt="Avatar" class="avatar">
+                                <div class="user-info">
+                                    <strong>María Alave</strong>
+                                    <small>Hoy</small>
+                                </div>
+                            </div>
+                            <i class="fas fa-ellipsis-h post-options"></i>
+                        </div>
+                        <p>¡Bienvenidos a Greeni! Esperamos que todos ustedes sean amigos y compartan su amor por el planeta.</p>
+                        <div class="post-actions">
+                            <button class="action-button like-button"><i class="far fa-heart"></i></button>
+                            <button class="action-button"><i class="far fa-comment"></i></button>
+                            <button class="action-button"><i class="fas fa-retweet"></i></button>
+                            <button class="action-button save-button"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </section>
+                <section class="content-area">
+                    <div class="post">
+                        <div class="post-header">
+                            <div class="user-info-container">
+                                <img src="https://i.pravatar.cc/30" alt="Avatar" class="avatar">
+                                <div class="user-info">
+                                    <strong>Walter Requejo</strong>
+                                    <small>Ayer</small>
+                                </div>
+                            </div>
+                            <i class="fas fa-ellipsis-h post-options"></i>
+                        </div>
+                        <p>Hoy planté un árbol en mi jardín y me siento muy feliz de contribuir al medio ambiente. ¿Tú ya plantaste el tuyo?</p>
+                        <div class="post-actions">
+                            <button class="action-button like-button"><i class="far fa-heart"></i></button>
+                            <button class="action-button"><i class="far fa-comment"></i></button>
+                            <button class="action-button"><i class="fas fa-retweet"></i></button>
+                            <button class="action-button save-button"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-area">
+                    <div class="post">
+                        <div class="post-header">
+                            <div class="user-info-container">
+                                <img src="https://i.pravatar.cc/20" alt="Avatar" class="avatar">
+                                <div class="user-info">
+                                    <strong>Jhonathan Tasayco</strong>
+                                    <small>Hace 2 días</small>
+                                </div>
+                            </div>
+                            <i class="fas fa-ellipsis-h post-options"></i>
+                        </div>
+                        <p>¡Hoy hace mucho sol! Perfecto para regar nuestras plantas con energía positiva.</p>
+                        <div class="post-actions">
+                            <button class="action-button like-button"><i class="far fa-heart"></i></button>
+                            <button class="action-button"><i class="far fa-comment"></i></button>
+                            <button class="action-button"><i class="fas fa-retweet"></i></button>
+                            <button class="action-button save-button"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </section>
+                <section class="content-area">
+                    <div class="post">
+                        <div class="post-header">
+                            <div class="user-info-container">
+                                <img src="https://i.pravatar.cc/10" alt="Avatar" class="avatar">
+                                <div class="user-info">
+                                    <strong>Rodrigo Alaya</strong>
+                                    <small>Hace 1 semana</small>
+                                </div>
+                            </div>
+                            <i class="fas fa-ellipsis-h post-options"></i>
+                        </div>
+                        <p>Aquí algunos tips de sostenibilidad: Usa bolsas reutilizables, cuida el agua y recicla para ayudar al planeta. ¿Qué otros tips tienes?</p>
+                        <div class="post-actions">
+                            <button class="action-button like-button"><i class="far fa-heart"></i></button>
+                            <button class="action-button"><i class="far fa-comment"></i></button>
+                            <button class="action-button"><i class="fas fa-retweet"></i></button>
+                            <button class="action-button save-button"><i class="far fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="side-section">
+                <section class="content-area">
+                    <h2>Tendencias</h2>
+                    <ul class="trend-list">
+                        <li><span>#Tendencia1</span><i class="fas fa-ellipsis-h trend-options"></i></li>
+                        <li><span>#Tendencia2</span><i class="fas fa-ellipsis-h trend-options"></i></li>
+                        <li><span>#Tendencia3</span><i class="fas fa-ellipsis-h trend-options"></i></li>
+                    </ul>
+                </section>
+
+                <section class="content-area">
+                    <h2>Recomendaciones de amigos</h2>
+                    <div class="friend-recommendation">
+                        <div class="friend-info">
+                            <img src="https://i.pravatar.cc/60" alt="Avatar" class="avatar">
+                            <p>Luis Saldarriaga</p>
+                        </div>
+                        <button>Seguir</button>
+                    </div>
+                    <div class="friend-recommendation">
+                        <div class="friend-info">
+                            <img src="https://i.pravatar.cc/80" alt="Avatar" class="avatar">
+                            <p>Edgar Mego</p>
+                        </div>
+                        <button>Seguir</button>
+                    </div>
+                    <div class="friend-recommendation">
+                        <div class="friend-info">
+                            <img src="https://i.pravatar.cc/90" alt="Avatar" class="avatar">
+                            <p>Patrick Ortiz</p>
+                        </div>
+                        <button>Seguir</button>
+                    </div>
+                    <div class="friend-recommendation">
+                        <div class="friend-info">
+                            <img src="https://i.pravatar.cc/71" alt="Avatar" class="avatar">
+                            <p>Rosangela Espinoza</p>
+                        </div>
+                        <button>Seguir</button>
+                    </div>
+                </section>
+
+                <section class="content-area">
+                    <div class="share" style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; background: #f8f7f4; border-radius: 20px; padding: 20px 18px;">
+                        <p>Comparte con tus amigos tus plantas</p>
+                        <div id="share-image-preview" style="width: 100%; min-height: 40px;"></div>
+                        <input type="file" id="share-file-input" accept="image/*" style="display:none">
+                        <button id="share-upload-btn" style="background: #005014; color: #fff; border: none; border-radius: 20px; padding: 8px 18px; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 15px;">Subir foto</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="public/assets/scripts/main.js" defer></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.friend-recommendation button').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                let name = btn.closest('.friend-recommendation')?.querySelector('p, .friend-info span, .friend-info p, .friend-name');
+                let nombre = name ? name.textContent.trim() : 'este usuario';
+                alert('¡Empezaste a seguir a ' + nombre + '!');
+            });
+        });
+        const shareUploadBtn = document.getElementById('share-upload-btn');
+        const shareFileInput = document.getElementById('share-file-input');
+        const shareImagePreview = document.getElementById('share-image-preview');
+        if (shareUploadBtn && shareFileInput && shareImagePreview) {
+            shareUploadBtn.addEventListener('click', function() {
+                shareFileInput.click();
+            });
+            shareFileInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        shareImagePreview.innerHTML = '<img src="' + e.target.result + '" alt="Foto compartida" style="max-width: 100%; border-radius: 10px; margin-top: 8px;">';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+        document.querySelectorAll('.like-button').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                if (btn.classList.contains('liked')) {
+                    btn.classList.remove('liked');
+                    btn.querySelector('i').classList.remove('fas');
+                    btn.querySelector('i').classList.add('far');
+                } else {
+                    btn.classList.add('liked');
+                    btn.querySelector('i').classList.remove('far');
+                    btn.querySelector('i').classList.add('fas');
+                }
+            });
+        });
+        document.querySelectorAll('.save-button').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                if (btn.classList.contains('saved')) {
+                    btn.classList.remove('saved');
+                    btn.querySelector('i').classList.remove('fas');
+                    btn.querySelector('i').classList.add('far');
+                    alert('Publicación retirada de guardados');
+                } else {
+                    btn.classList.add('saved');
+                    btn.querySelector('i').classList.remove('far');
+                    btn.querySelector('i').classList.add('fas');
+                    alert('¡Publicación guardada!');
+                }
+            });
+        });
+        document.querySelectorAll('.post-actions .action-button').forEach(function(btn) {
+            if (btn.classList.contains('like-button') || btn.classList.contains('save-button')) return;
+            btn.addEventListener('click', function() {
+                alert('Funcionalidad próximamente disponible');
+            });
+        });
+    });
+</script>
+</body>
+</html>
